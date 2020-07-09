@@ -1,0 +1,127 @@
+$primary: #ff1351;
+$secondary: #a920ff;
+$text: #2f3d41;
+$light: #fff;
+$line: #eee;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Nunito Sans', Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.25;
+  color: $text;
+  background-image: linear-gradient(120deg, $light, rgba($secondary, 0.05));
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(90deg, $line 1px, transparent 1px) 1px 0, transparent;
+  background-size: 25% 1px;
+
+  @media screen and (min-width: 1024px) {
+    background-size: 12.5% 1px;
+  }
+}
+
+a {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $text;
+  outline: none;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 3px solid $primary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s cubic-bezier(1, 0, 0, 1);
+    will-change: transform;
+  }
+
+  &:visited, &:active {
+    color: $text;
+    border-color: transparent;
+  }
+
+  &:hover, &:focus {
+    &::after {
+      height: 1px;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto auto 0;
+  padding: 1rem;
+  text-align: left;
+  position: relative;
+
+  @media screen and (min-width: 576px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+
+  .text {
+    order: 1;
+  }
+
+  .profile-image {
+    order: 0;
+
+    @media screen and (min-width: 576px) {
+      order: 1;
+
+      img {
+        margin-left: 1rem;
+      }
+    }
+
+    img {
+      width: 10rem;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: .5rem 1rem 3rem rgba($primary, 0.1);
+    }
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 2rem auto auto;
+  max-width: 600px;
+
+  a {
+    margin: 1rem;
+
+    &::after {
+      bottom: -4px;
+    }
+  }
+}
