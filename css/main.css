@@ -10,35 +10,36 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap; }
+* {
+  box-sizing: border-box; }
+
 body {
   padding: 0;
   margin: 0;
+  max-width: 100%;
   font-family: 'Nunito Sans', Roboto, sans-serif;
   font-size: 18px;
   font-weight: normal;
   line-height: 1.25;
   color: #2f3d41;
-  background-image: linear-gradient(120deg, #fff, rgba(161, 114, 255, 0.075)); }
+  background-image: linear-gradient(120deg, #fff 0%, rgba(119, 127, 164, 0.075) 100%); }
 
 main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(90deg, #eee 1px, transparent 1px) 1px 0, transparent;
+  height: 100vh;
+  height: -webkit-fill-available;
+  background: linear-gradient(90deg, rgba(47, 61, 65, 0.05) 1px, transparent 1px) 1px 0, transparent;
   background-size: 25% 1px; }
   @media screen and (min-width: 1024px) {
     main {
       background-size: 12.5% 1px; } }
 
 a {
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   text-decoration: none;
-  color: #2f3d41;
+  color: #5a757c;
   outline: none;
   position: relative; }
   a::after {
@@ -54,7 +55,7 @@ a {
     transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
     will-change: transform; }
   a:visited, a:active {
-    color: #2f3d41;
+    color: #5a757c;
     border-color: transparent; }
   a:hover::after, a:focus::after {
     height: 1px;
@@ -64,7 +65,7 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 720px;
   margin: auto auto 0;
   padding: 1rem;
   text-align: left;
@@ -78,27 +79,39 @@ a {
   .intro .text {
     order: 1; }
   .intro .profile-image {
-    order: 0; }
-    @media screen and (min-width: 576px) {
-      .intro .profile-image {
-        order: 1; }
-        .intro .profile-image img {
-          margin-left: 1rem; } }
+    order: 0;
+    margin-right: auto; }
     .intro .profile-image img {
       width: 10rem;
       height: auto;
       margin-bottom: 1.5rem;
       border-radius: 50%;
-      box-shadow: 0.5rem 1rem 3rem rgba(255, 19, 81, 0.1); }
+      box-shadow: 0.5rem 1rem 3rem rgba(119, 127, 164, 0.2); }
+    @media screen and (min-width: 576px) {
+      .intro .profile-image {
+        order: 1; }
+        .intro .profile-image img {
+          margin-left: 1rem;
+          margin-bottom: 0; } }
 
 .links {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin: 2rem auto auto;
-  max-width: 600px; }
+  width: 100%;
+  max-width: 720px;
+  padding: 0 1rem; }
   .links a {
-    margin: 1rem; }
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #2f3d41;
+    letter-spacing: 2px;
+    text-transform: uppercase; }
+    .links a:not(:last-child) {
+      margin-right: 2rem; }
     .links a::after {
       bottom: -4px;
       left: -5px;
