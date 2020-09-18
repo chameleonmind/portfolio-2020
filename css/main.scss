@@ -44,7 +44,6 @@ main {
   align-items: flex-start;
   flex-direction: column;
   height: 100vh;
-  height: -webkit-fill-available;
   background: linear-gradient(90deg, $line 1px, transparent 1px) 1px 0, transparent;
   background-size: 25% 1px;
 

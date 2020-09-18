@@ -30,7 +30,6 @@ main {
   align-items: flex-start;
   flex-direction: column;
   height: 100vh;
-  height: -webkit-fill-available;
   background: linear-gradient(90deg, rgba(47, 61, 65, 0.05) 1px, transparent 1px) 1px 0, transparent;
   background-size: 25% 1px; }
   @media screen and (min-width: 1024px) {
